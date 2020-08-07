@@ -26,10 +26,10 @@ O manual completo pode ser encontrado no site:
 
 https://matpower.org/doc/manuals/
 
-O que essas estes arquivos disponibilizados?
+O que são esses estes arquivos disponibilizados?
 
-São instâncias de fluxo de potência para redes de distribuição já conhecidos na literatura,
-algumas transcritas especialmente para o software MATPOWER.
+São instâncias de fluxo de potência para redes de distribuição já conhecidas na literatura,
+algumas transcritas por mim para o software MATPOWER.
 
 Onde coloco esses arquivos?
 
@@ -51,8 +51,8 @@ como o primeiro argumento para mpoption.
 >> mpopt = mpoption(mpopt, 'verbose', 0);
 >> results = runpf('case300', mpopt);
 
-Para fluxos de potência em redes de distribuição, o toolbox MATPOWER disponibilizados três modos
-de simulação ( parâmetro 'pf.alg'): somatório por correntes, somatório por potênca, somatório por admitância.
+Para fluxos de potência em redes de distribuição, o toolbox MATPOWER disponibiliza três modos
+de simulação ( parâmetro 'pf.alg'), válido para redes radiais:
 
 'PQSUM' { Power Summation (radial networks only)
 'ISUM' { Current Summation (radial networks only)
@@ -61,7 +61,7 @@ de simulação ( parâmetro 'pf.alg'): somatório por correntes, somatório por 
 >> mpopt = mpoption('pf.alg', 'ISUM', 'verbose', 3);
 >> results = runpf('case10_grainger',mpopt)
 
-Para acessar ajuda
+Para acessar a ajuda:
 
 >>help mpoption
 
