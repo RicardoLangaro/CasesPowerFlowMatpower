@@ -41,15 +41,15 @@ Por exemplo, o código a seguir executa um fluxo de energia no exemplo de 300 ba
 case300.m usando o algoritmo desacoplado rápido (versão XB), com impressão detalhada do 
 progresso do algoritmo, mas suprimindo toda a saída.
 
->> mpopt = mpoption('pf.alg', 'FDXB', 'verbose', 2, 'out.all', 0);
->> results = runpf('case300', mpopt);
+-- mpopt = mpoption('pf.alg', 'FDXB', 'verbose', 2, 'out.all', 0);
+-- results = runpf('case300', mpopt);
 
 Para modificar uma estrutura de opções existente, por exemplo, para desligar a opção detalhada
 e execute novamente com as opções restantes inalteradas, basta passar as opções existentes
 como o primeiro argumento para mpoption.
 
->> mpopt = mpoption(mpopt, 'verbose', 0);
->> results = runpf('case300', mpopt);
+-- mpopt = mpoption(mpopt, 'verbose', 0);
+-- results = runpf('case300', mpopt);
 
 Para fluxos de potência em redes de distribuição, o toolbox MATPOWER disponibiliza três modos
 de simulação ( parâmetro 'pf.alg'), válido para redes radiais:
@@ -58,10 +58,10 @@ de simulação ( parâmetro 'pf.alg'), válido para redes radiais:
 'ISUM' { Current Summation (radial networks only)
 'YSUM' { Admittance Summation (radial networks only)
 
->> mpopt = mpoption('pf.alg', 'ISUM', 'verbose', 3);
->> results = runpf('case10_grainger',mpopt)
+-- mpopt = mpoption('pf.alg', 'ISUM', 'verbose', 3);
+-- results = runpf('case10_grainger',mpopt)
 
 Para acessar a ajuda:
 
->>help mpoption
+-- help mpoption
 
