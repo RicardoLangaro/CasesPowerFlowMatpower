@@ -1,7 +1,7 @@
 Descrição
 -------------
 
-O que é MATPOWER ?
+### O que é MATPOWER ?
 Matpower é um pacote de arquivos .m Matlab® para resolver problemas de fluxo de energia e 
 otimizá-los.Pretende ser uma ferramenta de simulação para pesquisadores e educadores
 que seja fácil de usar e modificar. Matpower é projetado para oferecer o melhor desempenho
@@ -26,31 +26,33 @@ O manual completo pode ser encontrado no site:
 
 https://matpower.org/doc/manuals/
 
-O que são esses estes arquivos disponibilizados?
+### O que são esses estes arquivos disponibilizados?
 
 São instâncias de fluxo de potência para redes de distribuição já conhecidas na literatura,
-algumas transcritas por mim para o software MATPOWER.
+algumas transcritas por mim para o toolbox MATPOWER.
 
-Onde coloco esses arquivos?
+### Onde coloco esses arquivos?
 
 Dentro da pasta raiz: %Matlab%/toolbox/matpower/data
 
-Como simulo dentro do MATPOWER?
+### Como simulo dentro do MATPOWER?
 
 Por exemplo, o código a seguir executa um fluxo de energia no exemplo de 300 barramentos em
 case300.m usando o algoritmo desacoplado rápido (versão XB), com impressão detalhada do 
 progresso do algoritmo, mas suprimindo toda a saída.
 
--- mpopt = mpoption('pf.alg', 'FDXB', 'verbose', 2, 'out.all', 0);
--- results = runpf('case300', mpopt);
-
+```
+mpopt = mpoption('pf.alg', 'FDXB', 'verbose', 2, 'out.all', 0);
+results = runpf('case300', mpopt);
+```
 Para modificar uma estrutura de opções existente, por exemplo, para desligar a opção detalhada
 e execute novamente com as opções restantes inalteradas, basta passar as opções existentes
 como o primeiro argumento para mpoption.
 
--- mpopt = mpoption(mpopt, 'verbose', 0);
--- results = runpf('case300', mpopt);
-
+```
+mpopt = mpoption(mpopt, 'verbose', 0);
+results = runpf('case300', mpopt);
+```
 Para fluxos de potência em redes de distribuição, o toolbox MATPOWER disponibiliza três modos
 de simulação ( parâmetro 'pf.alg'), válido para redes radiais:
 
@@ -58,10 +60,12 @@ de simulação ( parâmetro 'pf.alg'), válido para redes radiais:
 'ISUM' { Current Summation (radial networks only)
 'YSUM' { Admittance Summation (radial networks only)
 
--- mpopt = mpoption('pf.alg', 'ISUM', 'verbose', 3);
--- results = runpf('case10_grainger',mpopt)
-
+```
+mpopt = mpoption('pf.alg', 'ISUM', 'verbose', 3);
+results = runpf('case10_grainger',mpopt)
+```
 Para acessar a ajuda:
 
--- help mpoption
-
+```
+help mpoption
+```
